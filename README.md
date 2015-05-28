@@ -56,6 +56,22 @@ Presences.find({ state: { currentRoomId: Session.get('currentRoomId') }});
 
 Of course Presence will call your function reactively, so everyone will know as soon as things change.
 
+## Server id
+
+If your app runs on multiple servers, *serverId* has to be set.
+
+```js
+// Somewhere in server code
+Presences.serverId = 'some_server_id';
+```
+
+For example ... on *modulus* server id is accessible with environment variable *SERVO_ID*: 
+```js
+// Somewhere in server code
+Presences.serverId = process.env.SERVO_ID;
+```
+
+
 ## Contributing
 
 Please! The biggest thing right now is figuring how to write tests.
